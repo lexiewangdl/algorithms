@@ -12,14 +12,6 @@ public class MergeTwoSortedLists {
 	     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 	 }
 	 
-	 public static ListNode smaller(ListNode a, ListNode b) {
-		 return (a.val < b.val) ? a : b;
-	 }
-	 
-	 public static ListNode bigger(ListNode a, ListNode b) {
-		 return (b.val < a.val) ? a : b;
-	 }
-	 
 	 public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
 		 ListNode result = new ListNode(0);
