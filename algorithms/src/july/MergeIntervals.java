@@ -1,4 +1,4 @@
-package june;
+package july;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,20 +7,14 @@ import java.util.List;
 public class MergeIntervals {
 	
 	public int[] mergeHelper(int[] a, int[] b) {
-		int[] merge = new int[2];
 		
-		if (a[0] == b[0]) {
-			merge[0] = b[0];
-			merge[1] = Math.max(b[0], b[1]);
-		} else if (a[1] >= b[0]) {
-			merge[0] = a[0];
-			merge[1] = Math.max(a[1], b[1]);
+		if (a[1] < b[0]) {
+			return new int[] {b[0], b[1]};
 		} else {
-			merge[0] = a[0];
-			merge[1] = a[1];
+			a[1] = Math.max(a[1], b[1]);
 		}
 		
-		return merge;
+		return a;
 	}
 	
     public int[][] merge(int[][] intervals) {
@@ -35,7 +29,13 @@ public class MergeIntervals {
     	Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
     	
     	for (int i = 0; i < intervals.length; i++) {
-    		if (result.size() == 0 || result.get(result.size() - 1)[1] < intervals[i][0]) {
+    		if (result.size() == 0) {
+    			result.add(new int[] {intervals[i][0], intervals[i][1]});
+    			continue;
+    		}
+
+    		
+    		if (result.get(result.size() - 1)[1] < intervals[i][0]) {
     			result.add(new int[] {intervals[i][0], intervals[i][1]});
     		} else {
     			result.get(result.size()-1)[1] = Math.max(result.get(result.size()-1)[1], intervals[i][1]);
