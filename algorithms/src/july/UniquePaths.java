@@ -3,6 +3,8 @@ package july;
 public class UniquePaths {
 	
 	// Dynamic Programming
+	// Time complexity: O(m*n)
+	// Space complexity: O(m*n)
     public int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
         
