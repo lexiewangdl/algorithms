@@ -2,6 +2,8 @@ package july;
 
 public class UniquePathsII {
 	
+	// 执行用时：0ms，在所有Java提交中击败了100%的用户
+	// 内存消耗：39.7MB，在所有Java提交中击败了30.28%的用户
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
     	
     	int nrows = obstacleGrid.length;
