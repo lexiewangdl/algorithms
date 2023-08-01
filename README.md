@@ -1,5 +1,4 @@
 # Algorithms
-This repository contains solutions to algorithms problems on LeetCode.
+This repository contains solutions to LeetCode problems.
 
-
-Programming language: Java
+All solutions are written in Java.
