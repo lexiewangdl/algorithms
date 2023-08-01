@@ -1,5 +1,14 @@
 # August 2024 LeetCode Notes
-## Aug 1: 100. Same Tree
+
+## Aug 1: 101. Symmetric Tree
+Difficulty: Easy
+
+**My solution**: similar to solution 2 to the previous problem, at each step, compare two nodes (one from the left subtree and one from the right subtree). Then, compare the left child of the left node to the right child of the right node, compare the right child of the left node to the left child of the right node.
+Must check if either of the two nodes is `null` before recursively calling the helper function, otherwise will get null pointer exception.
+
+## Aug 1: 100. Same Tree 
+Difficulty: Easy
+
 **Solution 1**: Use BFS to traverse both trees simultaneouly and compare at every step.
 - Time complexity: O(n) (worst case scenario, must check every single node in both trees)
 - Space complexity: two queues used, one for each tree, to implement BFS
