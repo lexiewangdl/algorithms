@@ -1,5 +1,10 @@
 # August 2024 LeetCode Notes
 
+## Aug 2: 1. Two Sum
+**My solution**: create a hash table to store the difference between `nums[i]` and `target` as key, and index `i` as value. At each step, check if the map contains a key that is equal to the current element.
+
+Runtime: O(n), worst case scenario, loop through the entire array. Best case scenario is when the solution is at indices `[0,1]`
+
 ## Aug 1: 101. Symmetric Tree
 Difficulty: Easy
 
