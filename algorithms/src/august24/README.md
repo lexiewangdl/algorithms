@@ -1,6 +1,8 @@
 # August 2024 LeetCode Notes
 
 ## Aug 3: 102. Binary Tree Level Order Traversal
+Difficulty: Medium
+
 **My solution**: use a `Queue` to store nodes we have not yet visited. At the end of each level, add a dummy node (whose `val` is `null`) to indicate that we have finished processing this level and a new list needs to be created to store values of the next level.
 
 Key points:
@@ -15,9 +17,13 @@ Runtime:
   - In the worst case, the queue must store all nodes in one level, and the leaf level is most likely to have more nodes. The output list of list will also have `n` spots.
 
 ## Aug 3: 104. Maximum Depth of Binary Tree
+Difficulty: Easy
+
 **My solution**: recursively call `maxDepth` on the left child and right child, at every step, increment depth by 1, return the greater value between the two.
 
 ## Aug 2: 1. Two Sum
+Difficulty: Easy
+
 **My solution**: create a hash table to store the difference between `nums[i]` and `target` as key, and index `i` as value. At each step, check if the map contains a key that is equal to the current element.
 
 Runtime: O(n), worst case scenario, loop through the entire array. Best case scenario is when the solution is at indices `[0,1]`
