@@ -1,5 +1,8 @@
 # August 2024 LeetCode Notes
 
+## Aug 3: 104. Maximum Depth of Binary Tree
+**My solution**: recursively call `maxDepth` on the left child and right child, at every step, increment depth by 1, return the greater value between the two.
+
 ## Aug 2: 1. Two Sum
 **My solution**: create a hash table to store the difference between `nums[i]` and `target` as key, and index `i` as value. At each step, check if the map contains a key that is equal to the current element.
 
