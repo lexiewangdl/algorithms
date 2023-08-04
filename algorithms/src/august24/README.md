@@ -1,5 +1,19 @@
 # August 2024 LeetCode Notes
 
+## Aug 3: 102. Binary Tree Level Order Traversal
+**My solution**: use a `Queue` to store nodes we have not yet visited. At the end of each level, add a dummy node (whose `val` is `null`) to indicate that we have finished processing this level and a new list needs to be created to store values of the next level.
+
+Key points:
+- Use `TreeNode dummy = new TreeNode();` instead of `null` to indicate level change, avoid `NullPointerException`
+- When to add a new `dummy` node? Every time we see a `dummy` node, it means that all nodes of the previous level have been processed. This includes queueing the children of nodes of previous level. For example, if the root is 3 and it has 9 and 20 as its child, when we see node 3, we will enqueue 9 and 20, then, the next time we remove an item from the queue, we will get the dummy node. At this point, only 9 and 20 are in the queue, thus, it's a good time to add another dummy node to indicate end of level.
+- Only add a node to the queue if we know it's not `null` (i.e. check if the left/right child is not `null` before `add`)
+
+Runtime:
+- Time complexity O(n)
+  - Must process every single node in the tree to get the result
+- Space complexity O(n)
+  - In the worst case, the queue must store all nodes in one level, and the leaf level is most likely to have more nodes. The output list of list will also have `n` spots.
+
 ## Aug 3: 104. Maximum Depth of Binary Tree
 **My solution**: recursively call `maxDepth` on the left child and right child, at every step, increment depth by 1, return the greater value between the two.
 
