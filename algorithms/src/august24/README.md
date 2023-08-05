@@ -7,6 +7,8 @@ Difficulty: Medium
 
 Key points:
 - After reaching the last node in input, make sure to set `rcurr.next = null;`, otherwise, there will be a cycle
+- `l` and `r` are dummy nodes, and `l.next` and `r.next` point to the first node of the smaller and larger half respectively
+- `lcurr` and `rcurr` are used to keep track of tail of the linked list
 
 Runtime:
 - Time complexity O(n): iterate every single node once
