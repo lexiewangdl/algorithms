@@ -1,5 +1,20 @@
 # August 2024 LeetCode Notes
 
+## Aug 4: 23. Merge k Sorted Lists
+Difficulty: Hard
+
+**My solution**: use a `PriorityQueue` to keep track of the elements that need to be added to resulting linked list.
+
+Key points:
+- If input `ListNode[] lists` has length 0, return `null`
+- The input `lists` can contain `null` nodes, skip these nodes when adding the head of each linked list into the PQ
+- When initializing the PQ, must pass in a comparator that enables comparison of `ListNode`s. The custom comparator class should implement the `Comparator` class, and must `@Override` the `compare(Object a, Object b)` method. This method should return -1 if the first object is smaller, 0 if the same, and 1 if the second object is smaller. To pass this comparator as input to PQ, do `PriorityQueue<ListNode> pq = new PriorityQueue<>(new ListNodeComparator());`
+- The size of the PQ should never be greater than `lists.length`, this is because...
+  - When initializing the PQ, we add the head of each linked list to the PQ
+  - To add further elements to the PQ, we must `remove` the first element in the PQ
+  - Since the linked lists are sorted, the removed node's next node must be greater than or equal to the removed node
+  - However, the next code can be greater than or equal to other nodes currently in the PQ, this is why we need to use a PQ
+
 ## Aug 4: 86. Partition List
 Difficulty: Medium
 
