@@ -1,5 +1,17 @@
 # August 2024 LeetCode Notes
 
+## Aug 4: 86. Partition List
+Difficulty: Medium
+
+**My solution:** use four pointers, one pointing to head of smaller half, one pointing to head of larger half, one pointing to tail of smaller half, one pointing to tail of larger half. Use `head` as pointer to current node, compare the value of `head` to `x`, make the tail of smaller half point to `head` if its value is smaller than `x`, do the same with the right half otherwise.
+
+Key points:
+- After reaching the last node in input, make sure to set `rcurr.next = null;`, otherwise, there will be a cycle
+
+Runtime:
+- Time complexity O(n): iterate every single node once
+- Space complexity O(1): constant number of pointers
+
 ## Aug 3: 102. Binary Tree Level Order Traversal
 Difficulty: Medium
 
